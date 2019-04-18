@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mantenimiento de Cliente</title>
+    <script src="scrips/accordion.js"></script>
+    <link rel="stylesheet" href="css/ManSolicitudes.css">
+</head>
+<body>
+
+<button class="accordion">Alta de Solicitudes</button>
+<div class="panel">
+    <form>
+        <div class="alta">
+
+            <label for="num">Numero de solicitud</label>
+            <input id ="num" type="text">
+
+            <div class="date">
+            <label for="date">Fecha</label>
+            <input id ="date" type="datetime-local">
+
+            <label for="dateE">Fecha de Entrega</label>
+            <input id ="dateE" type="date">
+            </div>
+
+            <label for="numC">Numero de Cliente</label>
+            <select id="numC"> </select> <!-- <input id ="numC" type="text" placeholder="Ingresa el Numero de Cliente"> -->
+
+            <label for="numP">Numero de Plano</label>
+            <input id ="numP" type="text" placeholder="Ingresa el Numero de Plano">
+
+            <label for="state">Estado</label>
+            <input id ="state" type="text" placeholder="Ingresa el Estado de la Solicitud">
+
+            <hr color="cadetblue" size="3">
+            <h2 align="center">Datos del Plano</h2>
+            <hr color="cadetblue" size="3">
+
+            <label for="desing">Diseño</label>
+            <input id ="desing" type="text" placeholder="Describa el Diseño">
+
+            <label for="color">Color</label>
+            <input id ="color" type="text" placeholder="Indique el color">
+
+            <label for="medida">Medidas</label>
+            <input id ="medida" type="text" placeholder="Indique las Medidas">
+
+            <label for="acabado">Acabado</label>
+            <input id ="acabado" type="text" placeholder="Ingresa el Acabado de la Madera">
+
+            <label for="tipe">Tipo de Madera</label>
+            <input id ="tipe" type="text" placeholder="Indique el Tipo de Madera">
+
+            <label for="acc">Accesorios</label>
+            <input id ="acc" type="text" placeholder="Describa los que Accesorios Tiene">
+
+            <input type="submit" value="Registrar Solicitud">
+            <input type="submit" value="Cancelar Registro">
+
+        </div>
+    </form>
+</div>
+<button class="accordion">Editar / Borrar</button>
+<div class="panel">
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Numero de Solicitud</th>
+            <th>Fecha de Registro</th>
+            <th>Fecha de Entrega</th>
+            <th>Numero de Cliente</th>
+            <th>Numero de Plano</th>
+            <th>Estado de la Solicitud</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+</body>
+
+<!-- Este es para el menu despegable -->
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+</html>
+
+<!-- Guia https://www.w3schools.com/howto/howto_js_accordion.asp -->

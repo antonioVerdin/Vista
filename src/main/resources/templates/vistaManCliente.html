@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mantenimiento de Cliente</title>
+    <link rel="stylesheet" href="css/ManClienteCss.css">
+    <script src="scrips/accordion.js"></script>
+</head>
+<body>
+
+    <button class="accordion">Alta de Cliente</button>
+    <div class="panel">
+        <form>
+            <div class="alta">
+            <label for="ID">Numero de Cliente </label>
+            <input type="text" id="ID">
+
+            <label for="username">Nombre de Cliente</label>
+            <input id ="username" type="text" placeholder="Ingresa su Nombre">
+
+            <label for="tel">Número de Teléfono</label>
+            <input id ="tel" type="text" placeholder="Ingresa su Teléfono">
+
+            <label for="address">Dirección</label>
+            <input id ="address" type="text" placeholder="Ingresa su Dirección">
+
+            <label for="cel">Teléfono Móvil</label>
+            <input id ="cel" type="text" placeholder="Ingresa su Celular">
+
+            <label for="Email">Correo Electrónico</label>
+            <input id ="Email" type="text" placeholder="Ingresa su Correo Electrónico">
+
+            <label for="ID">RFC </label>
+            <input type="text" rfc="rfc" placeholder="Ingresa su RFC">
+
+            <input type="submit" value="Registrar">
+            </div>
+        </form>
+    </div>
+    <button class="accordion">Editar / Borrar</button>
+    <div class="panel">
+        <table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Numero de cliente</th>
+                <th>Nombre</th>
+                <th>Numero de Telefono</th>
+                <th>Direccion</th>
+                <th>Telefono Movil</th>
+                <th>Correo Electronico</th>
+                <th>RFC</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+
+<!-- Este es para el menu despegable -->
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+</html>
+
+<!-- Guia https://www.w3schools.com/howto/howto_js_accordion.asp -->

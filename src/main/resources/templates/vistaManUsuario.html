@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mantenimiento de Cliente</title>
+    <script src="scrips/accordion.js"></script>
+    <link rel="stylesheet" href="css/ManUsuarios.css">
+
+</head>
+<body>
+
+<button class="accordion">Alta de Usuario</button>
+<div class="panel">
+    <form>
+        <div class="alta">
+            <!-- Usuario-->
+            <label for="username">Nombre de Usuario</label>
+            <input id ="username" type="text" placeholder="Ingresa tu usuario">
+
+            <label for="password">Contraseña</label>
+            <input id="password" type="password" placeholder="Ingresa tu contraseña">
+
+            <label for="passwordConfirm">Confirmar</label>
+            <input id="passwordConfirm" type="password" placeholder="Confirma tu contraseña">
+
+            <div class="checkBox">
+                <input id="gerente" type="checkbox" />
+                <label for="gerente">Gerente</label>
+                <input id="encargado" type="checkbox" />
+                <label for="encargado">Encargado de Control de Calidad</label>
+            </div>
+
+            <input type="submit" value="Guardar">
+            <input type="submit" value="Cancelar">
+        </div>
+    </form>
+</div>
+<button class="accordion">Editar / Borrar</button>
+<div class="panel">
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Nombre de Usuario</th>
+            <th>Contraseña</th>
+            <th>Tipo de Usuario</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+</body>
+
+<!-- Este es para el menu despegable -->
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+</html>
+
+<!-- Guia https://www.w3schools.com/howto/howto_js_accordion.asp -->

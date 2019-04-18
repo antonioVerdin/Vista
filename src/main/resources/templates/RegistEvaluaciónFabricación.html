@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mantenimiento de Cliente</title>
+    <script src="scrips/accordion.js"></script>
+    <link rel="stylesheet" href="css/RegistEvFaCss.css">
+
+
+</head>
+<body>
+
+<button class="accordion">Evaluacion de Fabricacion</button>
+<div class="panel">
+    <form>
+        <div class="alta">
+            <!-- Usuario-->
+            <label for="num">Numero de Folio</label>
+            <select id="num"> </select> <!-- <input id ="username" type="text" placeholder="Ingresa tu usuario"> -->
+
+            <label for="name1">Nombre de Cliente</label>
+            <input id="name1" type="text" placeholder="Aqui se Muestra el Nombre del Cliente">
+
+            <hr color="cadetblue" size="3">
+            <h2 align="center">Evaluacion</h2>
+            <hr color="cadetblue" size="3">
+
+            <div class="checkBox">
+
+                <input id="maderaCFabrica" type="checkbox" />
+                <label for="maderaCFabrica">Superficie de Madera Correcta</label>
+                <input id="maderaIFabrica" type="checkbox" />
+                <label for="maderaIFabrica">Superficie de Madera Incidencia</label>
+
+                <input id="obsMFabrica" type="text" placeholder="Indica si Notas Algun Detalle">
+
+                <input id="maderaImCFabrica" type="checkbox" />
+                <label for="maderaImCFabrica">Imperfecciones de Madera Correcta </label>
+                <input id="maderaImIFabrica" type="checkbox" />
+                <label for="maderaImIFabrica">Imperfecciones de Madera con Incidencia </label>
+
+                <input id="obsIFabrica" type="text" placeholder="Indica si Notas Algun Detalle">
+
+                <input id="maderaTcFabrica" type="checkbox" />
+                <label for="maderaTcFabrica">Tipo de Madera Correcta </label>
+                <input id="maderaTiFabrica" type="checkbox" />
+                <label for="maderaTiFabrica">Tipo de Madera con Incidencia </label>
+
+                <input id="obsTFabrica" type="text" placeholder="Indica si Notas Algun Detalle">
+
+            </div>
+
+            <input type="submit" value="Guardar Evaluacion">
+        </div>
+    </form>
+</div>
+
+<button class="accordion">Evaluacion de Lijado</button>
+<div class="panel">
+    <form>
+        <div class="alta">
+            <!-- Usuario-->
+            <label for="num2">Numero de Folio</label>
+            <select id="num2"> </select> <!-- <input id ="username" type="text" placeholder="Ingresa tu usuario"> -->
+
+            <label for="name2">Nombre de Cliente</label>
+            <input id="name2" type="text" placeholder="Aqui se Muestra el Nombre del Cliente">
+
+            <hr color="cadetblue" size="3">
+            <h2 align="center">Evaluacion</h2>
+            <hr color="cadetblue" size="3">
+
+            <div class="checkBox">
+
+                <input id="maderaCLijado" type="checkbox" />
+                <label for="maderaCLijado">Superficie de Madera Correcta</label>
+                <input id="maderaILijado" type="checkbox" />
+                <label for="maderaILijado">Superficie de Madera Incidencia</label>
+
+                <input id="obsMLijado" type="text" placeholder="Indica si Notas Algun Detalle">
+
+                <input id="maderaImC" type="checkbox" />
+                <label for="maderaImC">Imperfecciones de Madera Correcta </label>
+                <input id="maderaImI" type="checkbox" />
+                <label for="maderaImI">Imperfecciones de Madera con Incidencia </label>
+
+                <input id="obsILijado" type="text" placeholder="Indica si Notas Algun Detalle">
+
+            </div>
+
+            <input type="submit" value="Guardar Evaluacion">
+        </div>
+    </form>
+</div>
+
+<button class="accordion">Evaluacion de Pintura</button>
+<div class="panel">
+    <form>
+        <div class="alta">
+            <!-- Usuario-->
+            <label for="num3">Numero de Folio</label>
+            <select id="num3"> </select> <!-- <input id ="username" type="text" placeholder="Ingresa tu usuario"> -->
+
+            <label for="name3">Nombre de Cliente</label>
+            <input id="name3" type="text" placeholder="Aqui se Muestra el Nombre del Cliente">
+
+            <hr color="cadetblue" size="3">
+            <h2 align="center">Evaluacion</h2>
+            <hr color="cadetblue" size="3">
+
+            <div class="checkBox">
+
+                <input id="maderaCPintura" type="checkbox" />
+                <label for="maderaCPintura">Tinte de Madera Correcta</label>
+                <input id="maderaIPintura" type="checkbox" />
+                <label for="maderaIPintura">Tinte de Madera Incidencia</label>
+
+                <input id="obsMPintura" type="text" placeholder="Indica si Notas Algun Detalle">
+
+                <input id="maderaImCPintura" type="checkbox" />
+                <label for="maderaImCPintura">Acabado de Madera Correcta </label>
+                <input id="maderaImIPintura" type="checkbox" />
+                <label for="maderaImIPintura">Acabado de Madera con Incidencia </label>
+
+                <input id="obsIPintura" type="text" placeholder="Indica si Notas Algun Detalle">
+
+                <input id="maderaTcPintura" type="checkbox" />
+                <label for="maderaTcPintura">Detallado de Madera Correcta </label>
+                <input id="maderaTiPintura" type="checkbox" />
+                <label for="maderaTiPintura">Detallado de Madera con Incidencia </label>
+
+                <input id="obsTPintura" type="text" placeholder="Indica si Notas Algun Detalle">
+
+            </div>
+
+            <input type="submit" value="Guardar Evaluacion">
+        </div>
+    </form>
+</div>
+
+</body>
+
+<!-- Este es para el menu despegable -->
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+</html>
+
+<!-- Guia https://www.w3schools.com/howto/howto_js_accordion.asp -->
